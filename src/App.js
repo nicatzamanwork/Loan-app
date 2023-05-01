@@ -1,24 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import "./App.css";
+import Search from "./components/Search";
+import Available from "./components/Available";
+import { Route, Routes } from "react-router-dom";
+import Users from "./components/Users";
+import { useSelector } from "react-redux";
+import User from "./components/User";
 
 function App() {
+  const [fin, setFin] = useState("");
+  const foundUser = useSelector((state) => state.UserReducer.foundUser);
+  // console.log("founddd", foundUser);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Search fin={fin} setFin={setFin} />
+      {!foundUser && <p>Aramak için lütfen bir FIN girin.</p>}{" "}
+      {foundUser ? <User /> : <Available />}
+    </>
   );
 }
 

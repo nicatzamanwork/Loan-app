@@ -1,0 +1,38 @@
+.available_bigdiv {
+  max-width: 900px;
+  width: 100%;
+  padding: 30px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.422);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 10px auto;
+  color: white;
+}
+.available_form {
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.422);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 10px 0px;
+  margin: 10px 0px;
+}
+.available_form input {
+  width: 45%;
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.422);
+  padding: 25px 15px;
+  margin-top: 19px;
+  color: white;
+  border-radius: 5px;
+  outline: none;
+}
+.available_form input:focus {
+  color: white;
+  border-radius: 0px;
+}
+.available_form input::placeholder {
+  color: white;
+}
